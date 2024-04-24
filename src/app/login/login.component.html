@@ -1,0 +1,58 @@
+<!-- login.component.html -->
+<!--<a href="https://www.freepik.com/free-vector/company-employees-planning-task-brainstorming_9174471.htm#query=welcome&position=23&from_view=keyword&track=sph&uuid=96b4aaf0-a2e2-4a2f-8b77-8c46519717f4">Image by pch.vector</a> on Freepik-->
+<link rel="stylesheet" href="login.component.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="navbar">
+        <h1>EcoCarApp</h1>
+      </div>
+    <div class="form">
+        <div class="leftside">
+            <img src="assets/background.png" alt="Office" style="width: 500px; height: 300px;color:#1976d2" />
+            <h1 style="color: #1976d2; font-size: xxx-large;">Welcome to EcoCars</h1>
+            
+        </div>
+        <div class="rightside">
+            <div class="input-container">
+                <h2>{{ isLoginMode ? 'Login' : 'Signup' }}</h2>
+                <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+                <form (submit)="onSubmit()">
+                    <div class="input">
+                        <i class="fa fa-lock" style="margin-right: 8px;"></i> 
+                        <label for="username">Email:</label>
+                        <input type="text" id="username" name="username" [(ngModel)]="username" required />
+                    </div>
+    
+                    <div class="input">
+                        <i class="fa fa-lock" style="margin-right: 8px;"></i>  
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" [(ngModel)]="password" required />
+                    </div>
+    
+                    <ng-container *ngIf="!isLoginMode">
+                        <div class="input">
+                            <i class="fa fa-lock" style="margin-right: 8px;"></i> 
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required />
+                            <div *ngIf="errorMessage" class="error-message">
+                                Passwords do not match. Please enter matching passwords.
+                              </div>
+                        </div>
+                    </ng-container>
+    
+                    <button type="submit" class="login">{{ isLoginMode ? 'Login' : 'Signup' }}</button>
+                </form>
+                <button (click)="toggleMode();loadUserNames()" class="login">
+                    {{ isLoginMode ? 'Don\'t have an account? Sign up here.' : 'Already have an account? Login here.' }}
+                </button>
+                
+                <p class="forgotPass" *ngIf="isLoginMode">Forgot your password? <a href="/reset-password">Reset it here</a></p>
+              
+            </div>
+        </div>
+    </div>
+<app-footer></app-footer>          
+                
+         
+      
+  
+

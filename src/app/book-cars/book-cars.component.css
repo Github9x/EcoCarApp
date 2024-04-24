@@ -1,0 +1,111 @@
+.navbar {
+    background-color: #1976d2;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px; /* Adjust the height as needed */
+}
+
+.grid-container {
+  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    margin-top: 2%;
+   
+  }
+  
+  .grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:transparent;
+    padding-top: 10px;
+    height: 500px; /* Adjust the height as needed */
+    width: fit-content;
+   
+  }
+
+  .ad-container {
+    position: relative;
+    width: 100%; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    overflow: hidden;
+    border: 1px solid #ccc; /* Add border if desired */
+    border: none;
+}
+
+.ad-text {
+    position: absolute;
+    animation: scroll 40s linear infinite; /* Adjust animation duration as needed */
+}
+
+.ad-text h3 {
+    margin: 0;
+}
+
+@keyframes scroll {
+    from {
+        left: 100%; /* Start off the screen */
+    }
+    to {
+        left: -100%; /* Scroll to the top of the container */
+    }
+}
+
+.card-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Adjust z-index as needed */
+    width: 300px;
+    height: 550px;
+    background-color: whitesmoke;
+    border: #1976d2 1px solid;
+    width: 310px;
+  }
+
+  .card-container-3{
+    position: fixed;
+    overflow-y: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Adjust z-index as needed */
+    width: 300px;
+    height: 500px;
+    background-color: whitesmoke;
+    border: #1976d2 1px solid;
+    width: 310px;
+  }
+  
+  .image-container {
+    width: 30%; /* Adjust the width of the image container */
+    height: 100%; /* Occupy full height of the card */
+    float: left; /* Float the container to the left */
+    overflow: hidden; /* Hide overflow if image size exceeds container */
+  }
+  
+  .image1 {
+    width: 100%; /* Occupy full width of the container */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+  }
+  
+  :host ::ng-deep .p-card{
+    background-color: whitesmoke;
+    
+    
+  }
+
+  
+
+ 
+    
+  
+ 
+
+  
+  
